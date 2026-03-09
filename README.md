@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml/badge.svg)](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Release](https://img.shields.io/github/v/release/dsantoreis/dotnetflow)](https://github.com/dsantoreis/dotnetflow/releases/latest)
 
 Route inbound leads to the right pipeline owner with a .NET API and React operations dashboard.
 
