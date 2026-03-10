@@ -1,0 +1,157 @@
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --border: #1e1e2e;
+  --text: #e4e4ef;
+  --text-dim: #8888a0;
+  --accent: #6366f1;
+  --accent-glow: #818cf833;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.health-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.health-badge.healthy { background: #22c55e22; color: var(--success); }
+.health-badge.unhealthy { background: #ef444422; color: var(--danger); }
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.15s;
+}
+
+.tab:hover { border-color: var(--accent); color: var(--text); }
+.tab.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+.card .meta { color: var(--text-dim); font-size: 0.8rem; }
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { filter: brightness(1.15); }
+.btn-danger { background: var(--danger); color: white; }
+.btn-danger:hover { filter: brightness(1.15); }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.25rem; font-size: 0.8rem; color: var(--text-dim); }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.form-group textarea { min-height: 80px; resize: vertical; }
+
+.status-badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-Running { background: var(--accent-glow); color: var(--accent); }
+.status-Completed { background: #22c55e22; color: var(--success); }
+.status-Failed { background: #ef444422; color: var(--danger); }
+.status-Pending { background: #f59e0b22; color: var(--warning); }
+.status-Cancelled { background: #64748b22; color: #94a3b8; }
+
+.empty { text-align: center; padding: 3rem; color: var(--text-dim); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.flex { display: flex; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+
+.step-list { list-style: none; }
+.step-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+}
+.step-item:last-child { border-bottom: none; }
+.step-order { color: var(--accent); font-weight: 600; margin-right: 0.5rem; }
+.step-type { color: var(--text-dim); font-size: 0.75rem; }
