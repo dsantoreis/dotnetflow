@@ -3,6 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0-preview AS api-build
 WORKDIR /src
 COPY api/DotnetFlow.slnx api/
 COPY api/src/DotnetFlow.Api/DotnetFlow.Api.csproj api/src/DotnetFlow.Api/
+COPY api/tests/DotnetFlow.Api.Tests/DotnetFlow.Api.Tests.csproj api/tests/DotnetFlow.Api.Tests/
 RUN dotnet restore api/DotnetFlow.slnx
 COPY api/ api/
 RUN dotnet publish api/src/DotnetFlow.Api/DotnetFlow.Api.csproj -c Release -o /app/publish --no-restore
