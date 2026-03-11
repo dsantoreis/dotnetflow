@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'dotnetflow',
+      disable404Route: true,
       social: { github: 'https://github.com/dsantoreis/dotnetflow' },
       sidebar: [
         { label: 'Getting Started', slug: 'getting-started' },

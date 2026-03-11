@@ -1,0 +1,37 @@
+---
+const title = 'Page not found';
+const baseUrl = import.meta.env.BASE_URL;
+const docsHomeHref = new URL(baseUrl, 'http://dotnetflow.local').pathname;
+const gettingStartedHref = new URL('getting-started/', `http://dotnetflow.local${baseUrl}`).pathname;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} | dotnetflow Docs</title>
+    <style>
+      :root { color-scheme: dark; --bg: #0b1120; --panel: #151f35; --text: #edf2fc; --muted: #a7b4d0; --accent: #60a5fa; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: radial-gradient(circle at top, #12294d 0%, var(--bg) 55%); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+      main { width: min(620px, calc(100vw - 32px)); padding: 32px; border-radius: 24px; background: color-mix(in srgb, var(--panel) 88%, transparent); box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+      h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3rem); }
+      p { color: var(--muted); line-height: 1.6; }
+      .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+      a { display: inline-block; padding: 12px 16px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+      .primary { background: var(--accent); color: #0a1c35; }
+      .secondary { color: var(--text); border: 1px solid rgba(255,255,255,.14); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>dotnetflow Docs</p>
+      <h1>{title}</h1>
+      <p>The page you asked for is not in this docs build. Go back to the docs home or restart from the getting started path.</p>
+      <div class="actions">
+        <a class="primary" href={docsHomeHref}>Go to docs home</a>
+        <a class="secondary" href={gettingStartedHref}>Open getting started</a>
+      </div>
+    </main>
+  </body>
+</html>
