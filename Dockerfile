@@ -4,6 +4,7 @@ WORKDIR /src
 COPY api/DotnetFlow.slnx api/
 COPY api/src/DotnetFlow.Api/DotnetFlow.Api.csproj api/src/DotnetFlow.Api/
 COPY api/tests/DotnetFlow.Api.Tests/DotnetFlow.Api.Tests.csproj api/tests/DotnetFlow.Api.Tests/
+COPY api/benchmarks/DotnetFlow.Benchmarks/DotnetFlow.Benchmarks.csproj api/benchmarks/DotnetFlow.Benchmarks/
 RUN dotnet restore api/DotnetFlow.slnx
 COPY api/ api/
 RUN dotnet publish api/src/DotnetFlow.Api/DotnetFlow.Api.csproj -c Release -o /app/publish --no-restore
