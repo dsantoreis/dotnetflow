@@ -90,7 +90,7 @@ flowchart LR
 | Database | PostgreSQL + EF Core |
 | Frontend | React + TypeScript + Vite |
 | Infra | Docker, docker-compose, Kubernetes |
-| Tests | xUnit, 35 tests, 86% line coverage |
+| Tests | xUnit, 97 tests, 98% line coverage |
 
 ---
 
@@ -104,7 +104,9 @@ api/
     Models/            # Domain entities and DTOs
     Data/              # EF Core DbContext
   tests/DotnetFlow.Api.Tests/
-    7 test files, 35 tests covering engine, bus, triggers, and all API endpoints
+    7 test files, 97 tests covering engine, bus, triggers, and all API endpoints
+  benchmarks/DotnetFlow.Benchmarks/
+    BenchmarkDotNet suite for workflow engine and event bus performance
 frontend/
   App.tsx              # React ops dashboard with live execution tracking
 k8s/                   # Kubernetes deployment, service, ingress
@@ -138,10 +140,33 @@ cd frontend && npm install && npm run dev
 ```bash
 cd api
 dotnet test --collect:"XPlat Code Coverage"
-# 35 tests, 86% line coverage, ~400ms
+# 97 tests, 98% line coverage
 ```
 
 Coverage threshold is enforced at 80% in CI. Every PR must pass.
+
+---
+
+## Benchmarks
+
+Measured with [BenchmarkDotNet](https://benchmarkdotnet.org/) on .NET 10, Apple Silicon (ARM64).
+
+| Operation | Mean | Allocated |
+|-----------|------|-----------|
+| Start execution (3 steps) | 86 us | 94 KB |
+| Start execution (20 steps) | 144 us | 139 KB |
+| Full 3-step workflow run | 411 us | 429 KB |
+| Full 20-step workflow run | 3.4 ms | 3.3 MB |
+| Condition evaluation | 28 ns | 160 B |
+| EventBus publish (cold) | 23 ns | 40 B |
+| EventBus publish (hot) | 170 ns | 1.8 KB |
+
+Run them yourself:
+
+```bash
+cd api
+dotnet run --project benchmarks/DotnetFlow.Benchmarks -c Release
+```
 
 ---
 

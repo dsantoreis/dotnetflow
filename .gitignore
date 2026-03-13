@@ -1,2 +1,5 @@
 coverage-results/
 TestResults/
+BenchmarkDotNet.Artifacts/
+**/bin/
+**/obj/
