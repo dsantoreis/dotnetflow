@@ -66,6 +66,8 @@ curl http://localhost:8081/api/executions
 
 Events match workflows by `triggerEvent`. When a match hits, the engine creates an execution and the background worker processes each step in sequence.
 
+See [DEMO.md](./DEMO.md) for a full walkthrough with conditional steps and the dashboard.
+
 ---
 
 ## Architecture
