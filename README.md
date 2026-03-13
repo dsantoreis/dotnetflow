@@ -3,7 +3,7 @@
 **Route events through multi-step workflows with real-time execution tracking.**
 
 [![CI](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml/badge.svg)](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-98%25-brightgreen)](https://github.com/dsantoreis/dotnetflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Release](https://img.shields.io/github/v/release/dsantoreis/dotnetflow)](https://github.com/dsantoreis/dotnetflow/releases/latest)
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://dsantoreis.github.io/dotnetflow/)
