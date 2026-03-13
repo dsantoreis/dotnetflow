@@ -1,4 +1,4 @@
-# Building a Workflow Engine in .NET 8 That Doesn't Need a PhD to Operate
+# Building a Workflow Engine in .NET 10 That Doesn't Need a PhD to Operate
 
 Enterprise workflow engines have a reputation problem. They're powerful, configurable, and completely impenetrable to anyone who didn't spend six months in vendor training.
 
@@ -35,9 +35,9 @@ POST /api/v1/workflows
 
 Each step can be automated (handler function) or manual (assigned to a team via the dashboard). Events trigger transitions. The engine handles retries, timeouts, and dead-letter queuing.
 
-## Why .NET 8
+## Why .NET 10
 
-.NET 8 is the best runtime nobody talks about in the AI/startup world:
+.NET 10 is the best runtime nobody talks about in the AI/startup world:
 
 - **Performance.** ASP.NET Core consistently tops TechEmpower benchmarks. Dotnetflow handles 3,000+ workflow events/second on modest hardware.
 - **Type safety.** C# catches entire categories of bugs at compile time that dynamic languages discover in production.
